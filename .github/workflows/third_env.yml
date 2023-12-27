@@ -1,0 +1,28 @@
+name: Environment variable test
+
+on:
+  workflow_dispatch: 
+env:
+    GLOBAL_NAME: "globvariable"
+    GLOBAL_VERSION: "1.0.0"
+jobs:
+    main_build:
+      runs-on: ubuntu-latest
+      env:
+        BUILD_NAME: "buildvariable"
+        BUILD_VERSION: "1.0.1"
+
+      steps:
+      - name: Steps for build variable
+        run: |
+          echo "Running step variable ${{env.STEP_NAME}}"
+        env:
+          STEP_NAME: "stepvariable"
+          STEP_VERSION: "1.0.2"
+          
+    second_build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Steps for build variable
+              run: |
+                echo "calling global ${{env.GLOBAL_NAME}}"
