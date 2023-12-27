@@ -1,6 +1,6 @@
 # This is a simple workflow 
 
-name: 'GitHub Workflow Demo'
+name: 'GitHub Workflow First Version'
 
 on: [push]
 
@@ -8,5 +8,5 @@ jobs:
   sayHello:
     runs-on: ubuntu-latest
     steps: 
-    - name: runscript-to-say-hello
-      run:  echo "Howdy GitHub Actions"
+    - name: say-hello-world
+      run:  echo "Hello world!!"
