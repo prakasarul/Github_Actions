@@ -1,6 +1,6 @@
 # This is a simple workflow 
 
-name: 'GitHub Workflow First Version'
+name: 'GitHub Workflow Second Version'
 
 on: 
   workflow_dispatch:
