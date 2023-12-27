@@ -1,0 +1,18 @@
+name: Assigning Environment variable test
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+   setup_var:
+      name: Assigning environment variable
+      runs-on: ubuntu-latest
+      steps:
+        - run : echo "action=run_var" >>$GITHUB_ENV
+
+        - run : echo "variable from github ${{env.action}}"
+
+
+        
+    
