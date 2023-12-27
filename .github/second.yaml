@@ -1,0 +1,20 @@
+# This is a simple workflow 
+
+name: 'GitHub Workflow First Version'
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+    - name: say-hello-world
+      run:  echo "Hello world!!"
+
+  build-api:
+     needs: build
+     runs-on: ubuntu-latest
+     steps:
+     - name: say-hello-world2
+       run: echo "Hello world from build-api!!!"
