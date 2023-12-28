@@ -27,12 +27,13 @@ jobs:
         echo var2_date: ${{ steps.var_source_step.outputs.var2_date }}
 
     - name: Set output with new syntax
+      id: set_output
       run: echo "date_var=$(date +'%Y-%m-%d-%H-%M')" >> $GITHUB_OUTPUT
     
     - name: Get-output
       run: |
         echo "Printing the values with new syntax"
-        echo "${{ env.date_var }}"
+        echo "${{steps.set_output.outputsdate_var}}"
 
   job1:
     runs-on: windows-latest
@@ -66,4 +67,4 @@ jobs:
     steps:
       - run: |
           echo "Printing the values from new syntax"
-          echo output1: ${{env.test_job}}
+          echo "${{needs.job2.outputs.test_job}}"
