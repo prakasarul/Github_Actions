@@ -33,7 +33,7 @@ jobs:
     - name: Get-output
       run: |
         echo "Printing the values with new syntax"
-        echo "${{steps.set_output.outputsdate_var}}"
+        echo "${{steps.set_output.outputs.date_var}}"
 
   job1:
     runs-on: windows-latest
